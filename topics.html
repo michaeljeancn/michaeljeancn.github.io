@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<title>精选专题 · 米糕的免费信息小站</title>
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="alternate" type="application/rss+xml" title="米糕的免费信息小站 · 免费资源更新" href="feed.xml" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebSite","@id":"https://michaeljeancn.github.io/#website","url":"https://michaeljeancn.github.io/","name":"米糕的免费信息小站","inLanguage":"zh-CN","description":"为有声书、广播剧与影视配音从业者整理的正版免费插件、音源与限免情报。","publisher":{"@id":"https://michaeljeancn.github.io/#studio"}},
+  {"@type":"Organization","@id":"https://michaeljeancn.github.io/#studio","name":"米糕声音坊","url":"https://michaeljeancn.github.io/","description":"米糕的个人工作室，做有声书 / 有声剧、广播剧以及影视配音的录音与制作，也包括教学。","email":"michaeljeancn@outlook.com","logo":{"@type":"ImageObject","url":"https://michaeljeancn.github.io/assets/logo-dark.png"},"contactPoint":{"@type":"ContactPoint","contactType":"general","email":"michaeljeancn@outlook.com","availableLanguage":"zh-CN"},"sameAs":["https://www.ximalaya.com/zhubo/45392328","https://www.kuwo.cn/singer_detail/8193913/album","https://www.lanrentingshu.com/anchor/1126508044","https://www.qidian.com/audiobook/31643285107875401/","https://music.163.com/#/user/home?id=3826362280","https://space.bilibili.com/81259795"]}
+]}
+</script>
+<style>
+  :root {
+    --bg:#f4f6fc; --bg-grad1:#eef2ff; --bg-grad2:#f8f5ff;
+    --card:#ffffff; --card-soft:#f7f8fe;
+    --text:#161a27; --text-2:#3c4560; --muted:#6f7891;
+    --border:#e4e8f4; --border-strong:#d3d9ec;
+    --accent:#4f63ff; --accent-2:#8b5cf6; --accent-soft:rgba(79,99,255,.10);
+    --limited:#d94b32; --limited-soft:#fdece8;
+    --free:#0f9d63; --free-soft:#e6f7ef;
+    --price:#c2410c; --price-soft:#fff1ea;
+    --shadow-sm:0 1px 2px rgba(23,32,70,.05);
+    --shadow:0 10px 26px rgba(30,42,90,.08);
+    --shadow-lift:0 16px 36px rgba(30,42,90,.14);
+    color-scheme: light;
+  }
+  [data-theme="dark"] {
+    --bg:#0a0d17; --bg-grad1:#0e1426; --bg-grad2:#120e22;
+    --card:#141a2b; --card-soft:#1a2135;
+    --text:#e9ecf7; --text-2:#c2c9dd; --muted:#8e98b2;
+    --border:#232a40; --border-strong:#2f3855;
+    --accent:#8090ff; --accent-2:#b79cff; --accent-soft:rgba(128,144,255,.14);
+    --limited:#ff8069; --limited-soft:rgba(255,128,105,.13);
+    --free:#41d99a; --free-soft:rgba(65,217,154,.13);
+    --price:#ff9d7a; --price-soft:rgba(255,128,105,.12);
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+    --shadow:0 12px 30px rgba(0,0,0,.42);
+    --shadow-lift:0 18px 44px rgba(0,0,0,.55);
+    color-scheme: dark;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:radial-gradient(1200px 600px at 12% -10%, var(--bg-grad1), transparent 60%),
+               radial-gradient(1000px 500px at 88% 0%, var(--bg-grad2), transparent 55%),
+               var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+    min-height:100vh; transition:background .25s ease, color .25s ease;
+  }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+
+  /* ---------- Site nav (与其余页面保持一致) ---------- */
+  .siteNav { background:var(--card); border-bottom:1px solid var(--border); position:relative; z-index:60; }
+  .siteNavInner { display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:54px; flex-wrap:wrap; }
+  .siteNavBrand { display:flex; align-items:center; gap:9px; color:var(--text); text-decoration:none; font-size:14px; font-weight:600; min-width:0; }
+  .siteNavBrand img { width:26px; height:26px; object-fit:contain; display:block; }
+  .siteNavBrand .navLogoOnDark { display:none; }
+  [data-theme="dark"] .siteNavBrand .navLogoOnLight { display:none; }
+  [data-theme="dark"] .siteNavBrand .navLogoOnDark { display:block; }
+  .siteNavLinks { display:flex; align-items:center; gap:4px; flex-wrap:wrap; }
+  .siteNavLinks a { padding:6px 12px; border-radius:9px; font-size:13px; color:var(--text-2); text-decoration:none; transition:background .18s ease, color .18s ease; }
+  .siteNavLinks a:hover { background:var(--accent-soft); color:var(--accent); }
+  .siteNavLinks a.active { background:var(--accent-soft); color:var(--accent); }
+  .navTheme {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border-radius:999px; cursor:pointer;
+    border:1px solid var(--border-strong); background:var(--card-soft); color:var(--text-2); font-size:14px;
+  }
+  .navTheme:hover { color:var(--accent); border-color:var(--accent); }
+  @media (max-width:520px) {
+    .siteNavInner { min-height:auto; padding-top:10px; padding-bottom:10px; }
+    .siteNavBrand { font-size:13px; }
+    .siteNavLinks a { padding:5px 8px; font-size:11.5px; }
+  }
+
+  /* ---------- Topics page ---------- */
+  .topicsMain { max-width:980px; padding:30px 20px 60px; }
+  .aboutHero { display:flex; align-items:center; gap:16px; margin-bottom:22px; }
+  .aboutHero img { width:64px; height:64px; flex:0 0 64px; object-fit:contain; display:block; }
+  .aboutHero .heroLogoOnDark { display:none; }
+  [data-theme="dark"] .aboutHero .heroLogoOnLight { display:none; }
+  [data-theme="dark"] .aboutHero .heroLogoOnDark { display:block; }
+  .aboutHero h1 { margin:0 0 4px; font-size:24px; letter-spacing:.3px; }
+  .aboutHero p { margin:0; font-size:13px; color:var(--muted); }
+  .backLink { display:inline-block; margin-bottom:16px; font-size:13px; color:var(--accent); text-decoration:none; }
+  .backLink:hover { text-decoration:underline; }
+  .introCard { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin-bottom:20px; box-shadow:var(--shadow-sm); }
+  .introCard p { margin:0 0 10px; font-size:13.5px; color:var(--text-2); }
+  .introCard p:last-child { margin-bottom:0; }
+  .introCard a { color:var(--accent); }
+
+  .topicGrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  @media (max-width:620px) { .topicGrid { grid-template-columns:1fr; } }
+  .topicCard {
+    display:flex; flex-direction:column; gap:9px; text-decoration:none; color:inherit;
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:20px 22px; box-shadow:var(--shadow-sm);
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .topicCard:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .topicCard .kind { align-self:flex-start; font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px;
+    background:color-mix(in srgb, var(--c,#4f63ff) 13%, transparent); color:var(--c,#4f63ff); }
+  .topicCard h3 { margin:0; font-size:17px; font-weight:650; }
+  .topicCard p { margin:0; font-size:13px; color:var(--text-2); flex:1; }
+  .topicCard .meta { font-size:12px; color:var(--muted); }
+  .topicCard .go { font-size:13px; font-weight:600; color:var(--accent); }
+
+  /* ---------- Item cards (与主站卡片视觉一致，独立精简实现) ---------- */
+  .itemGrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  @media (max-width:620px) { .itemGrid { grid-template-columns:1fr; } }
+  .tCard { background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
+           display:flex; flex-direction:column; box-shadow:var(--shadow-sm);
+           transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .tCard:hover { transform:translateY(-3px); box-shadow:var(--shadow-lift); border-color:var(--border-strong); }
+  .thumb { position:relative; width:100%; aspect-ratio:16/9; background:linear-gradient(135deg,var(--accent-soft),var(--free-soft));
+           display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .ph { display:flex; align-items:center; justify-content:center; padding:6px 14px 0; max-width:100%; }
+  .ph .phTxt { font-size:48px; font-weight:700; line-height:1.12; text-align:center; color:var(--accent);
+    opacity:.85; max-width:100%; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+    overflow:hidden; word-break:normal; overflow-wrap:anywhere; }
+  .ph .phW { display:block; max-width:100%; overflow-wrap:anywhere; }
+  .thumb .badge { position:absolute; top:10px; left:10px; z-index:2; font-size:11px; padding:3px 9px;
+    border-radius:999px; font-weight:700; backdrop-filter:blur(4px); background:rgba(255,255,255,.86); color:var(--free); }
+  .thumb .badge.limited { color:var(--limited); }
+  .tCard .body { padding:13px 15px 15px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .tCard h3 { margin:0; font-size:15.5px; line-height:1.4; font-weight:650; }
+  .tCard .brand { font-size:12px; color:var(--muted); }
+  .tCard .brand b { color:var(--text-2); font-weight:600; }
+  .tCard .note { margin:0; padding:8px 10px; border-left:3px solid var(--accent);
+    background:var(--accent-soft); border-radius:0 8px 8px 0; font-size:12.5px; color:var(--text-2); }
+  .tCard .desc { margin:0; color:var(--muted); font-size:12.5px; display:-webkit-box;
+    -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .dl { display:flex; align-items:center; gap:7px; font-size:12px; color:var(--price);
+    background:var(--price-soft); border-radius:8px; padding:5px 8px; }
+  .dl::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; flex:none; }
+  .dl.unknown { color:var(--muted); background:var(--card-soft); }
+  .tCard .foot { margin-top:auto; padding-top:6px; }
+  .more { display:inline-flex; align-items:center; gap:4px; text-decoration:none; color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:7px 13px; border-radius:9px;
+    font-size:12.5px; font-weight:600; box-shadow:0 4px 12px var(--accent-soft); }
+  .more:hover { opacity:.94; }
+  .hiddenNote { margin-top:18px; font-size:12px; color:var(--muted); }
+  .state { padding:40px 0; text-align:center; color:var(--muted); font-size:13.5px; }
+  .siteFoot { margin-top:28px; font-size:12px; color:var(--muted); }
+  .siteFoot a { color:var(--accent); }
+</style>
+<script>
+  (function(){
+    var t=null; try{ t=localStorage.getItem('fah-theme'); }catch(e){}
+    if(!t && window.matchMedia) t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-theme', t||'light');
+  })();
+</script>
+</head>
+<body>
+<nav class="siteNav" aria-label="主导航">
+  <div class="wrap siteNavInner">
+    <a class="siteNavBrand" href="index.html">
+      <img class="navLogoOnLight" src="assets/logo-dark.png" alt="" />
+      <img class="navLogoOnDark" src="assets/logo-light.png" alt="" aria-hidden="true" />
+      <span>米糕的免费信息小站</span>
+    </a>
+    <div class="siteNavLinks">
+      <a href="index.html">免费资源库</a>
+      <a href="topics.html" class="active">精选专题</a>
+      <a href="works.html">我的作品</a>
+      <a href="about.html">关于</a>
+      <a href="about.html#changelog">更新日志</a>
+      <button class="navTheme" id="navTheme" type="button" title="切换亮色 / 暗色" aria-label="切换亮色 / 暗色">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap topicsMain">
+  <header class="aboutHero">
+    <img class="heroLogoOnLight" src="assets/logo-dark.png" alt="米糕声音坊" />
+    <img class="heroLogoOnDark" src="assets/logo-light.png" alt="" aria-hidden="true" />
+    <div>
+      <h1 id="heroTitle">精选专题</h1>
+      <p id="heroSub">从八千多条里挑出来的清单，每一份都写了「为什么是它」。</p>
+    </div>
+  </header>
+
+  <div id="view"><div class="state">正在加载专题…</div></div>
+
+  <footer class="siteFoot">
+    米糕声音坊 · 条目卡片按 id 取自资源库当日数据，下架或过期的会自动隐藏 ·
+    <a href="feed.xml">RSS 订阅</a> · <a href="about.html">关于与数据来源</a> · <a href="index.html">返回资源库</a>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('navTheme');
+  if(btn) btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('fah-theme',next); }catch(e){}
+  });
+
+  var SITE='https://michaeljeancn.github.io/';
+  var WEBSITE=SITE+'#website';
+  var view=document.getElementById('view');
+  var heroTitle=document.getElementById('heroTitle'), heroSub=document.getElementById('heroSub');
+  var esc=function(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+  var isYmd=function(s){ return /^\d{4}-\d{2}-\d{2}$/.test(String(s||'')); };
+  // 与构建脚本一致：面向国内读者，按北京时间（UTC+8）判断「今天」
+  var TODAY=new Date(Date.now()+8*3600000).toISOString().slice(0,10);
+  // 日历天数用于「今天最后一天」；剩余天数与主站详情弹层 dlDaysLeft() 同口径
+  // （截止日 23:59:59 向上取整），避免同一条目在专题页和主站差 1 天。
+  var calDays=function(d){
+    return Math.round((Date.parse(d+'T00:00:00Z')-Date.parse(TODAY+'T00:00:00Z'))/86400000);
+  };
+  var leftDays=function(d){
+    return Math.max(0,Math.ceil((new Date(d+'T23:59:59').getTime()-Date.now())/86400000));
+  };
+  var get=function(u){ return fetch(u,{cache:'no-cache'}).then(function(r){
+    if(!r.ok) throw new Error('HTTP '+r.status+' '+u); return r.json(); }); };
+
+  // 结构化数据（Phase 3）：共享 WebSite / Organization 图在 head 里静态写死，
+  // 这里按当前视图动态补 CollectionPage / ItemList / BreadcrumbList。
+  function jsonLd(obj){
+    var s=document.createElement('script');
+    s.type='application/ld+json';
+    s.textContent=JSON.stringify(obj).replace(/</g,'\\u003c');
+    document.head.appendChild(s);
+  }
+  function ldTopicList(topics){
+    var url=SITE+'topics.html';
+    jsonLd({ '@context':'https://schema.org', '@type':'CollectionPage',
+      '@id':url+'#collection', url:url, name:'精选专题 · 米糕的免费信息小站',
+      description:'按实际用途挑好的免费插件与音源清单，每条都写明为什么选它。',
+      inLanguage:'zh-CN', isPartOf:{'@id':WEBSITE},
+      mainEntity:{ '@type':'ItemList', numberOfItems:topics.length,
+        itemListElement:topics.map(function(t,i){
+          return {'@type':'ListItem',position:i+1,name:t.title,
+            url:SITE+'topics.html?t='+encodeURIComponent(t.slug)}; }) } });
+  }
+  function ldTopicDetail(t,pairs){
+    var url=SITE+'topics.html?t='+encodeURIComponent(t.slug);
+    jsonLd({ '@context':'https://schema.org', '@graph':[
+      { '@type':'CollectionPage', '@id':url+'#collection', url:url,
+        name:t.title+' · 精选专题', description:t.tagline||'', inLanguage:'zh-CN',
+        isPartOf:{'@id':WEBSITE},
+        mainEntity:{ '@type':'ItemList', numberOfItems:pairs.length,
+          itemListElement:pairs.map(function(p,i){
+            return {'@type':'ListItem',position:i+1,name:p.it.title,
+              url:p.it.claimLink||p.it.purchaseUrl||p.it.link||url}; }) } },
+      { '@type':'BreadcrumbList', itemListElement:[
+        {'@type':'ListItem',position:1,name:'免费资源库',item:SITE},
+        {'@type':'ListItem',position:2,name:'精选专题',item:SITE+'topics.html'},
+        {'@type':'ListItem',position:3,name:t.title,item:url} ] }
+    ] });
+  }
+
+  // 旧路径（仅当构建期精简索引缺失 / 清单已变更时回退）：全量分页只加载一次
+  var allPromise=null;
+  function loadAll(){
+    if(allPromise) return allPromise;
+    allPromise=get('data-meta.json').then(function(meta){
+      var jobs=[];
+      for(var i=0;i<meta.freePages;i++) jobs.push(get('data-free.'+i+'.json'));
+      jobs.push(get('data-limited.json'));
+      return Promise.all(jobs).then(function(arrs){ return arrs.reduce(function(a,b){ return a.concat(b); },[]); });
+    });
+    return allPromise;
+  }
+
+  // 首选构建期精简索引：一个几十 KB 的 topics/slim.json 就够渲染列表与任意专题详情，
+  // 不再为了几十条卡片下载 5 个 data-free.N.json（约 11.7 MB）。
+  // 同时读一次手写清单 index.json 比对 slug：有人新增专题却还没跑构建时，
+  // 索引会过期，此时自动回退旧路径，避免新专题「凭空消失」。
+  var payloadPromise=null;
+  function getPayload(){
+    if(payloadPromise) return payloadPromise;
+    payloadPromise=Promise.all([get('topics/slim.json'),get('topics/index.json')]).then(function(r){
+      var s=r[0], idx=r[1];
+      if(!s||!Array.isArray(s.topics)||!s.items||!Array.isArray(s.limitedIds)) throw new Error('精简索引格式异常');
+      var a=(idx.topics||[]).map(function(t){ return t.slug; }).join('|');
+      var b=s.topics.map(function(t){ return t.slug; }).join('|');
+      if(a!==b) throw new Error('专题清单已变更，等待下一次构建');
+      return s;
+    }).catch(function(){ return legacyPayload(); });
+    return payloadPromise;
+  }
+  function legacyPayload(){
+    return Promise.all([get('topics/index.json'),loadAll()]).then(function(r){
+      var idx=r[0], all=r[1], items={}, limitedIds=[];
+      all.forEach(function(it){ items[it.id]=it; if(it.type==='limited') limitedIds.push(it.id); });
+      return Promise.all((idx.topics||[]).map(function(t){
+        return get('topics/'+t.slug+'.json').then(function(d){
+          return { slug:t.slug, title:d.title||t.title, tagline:d.tagline||t.tagline,
+            kind:t.kind||'curated', accent:t.accent||'#4f63ff', updatedAt:d.updatedAt||idx.updatedAt,
+            intro:d.intro||[], dynamic:d.dynamic||null, limit:d.limit||null,
+            items:(d.items||[]).map(function(x){ return {id:x.id,note:x.note||''}; }) };
+        },function(){
+          return { slug:t.slug, title:t.title, tagline:t.tagline, kind:t.kind||'curated',
+            accent:t.accent||'#4f63ff', updatedAt:idx.updatedAt, intro:[], dynamic:null, limit:null, items:[] };
+        });
+      })).then(function(topics){
+        return { topics:topics, items:items, limitedIds:limitedIds, legacy:true };
+      });
+    });
+  }
+
+  function phHtml(it){
+    var name=String(it.brand||it.title||'免费资源');
+    return name.split(/\s+/).filter(Boolean).map(function(w){ return '<span class="phW">'+esc(w)+'</span>'; }).join('');
+  }
+  // 图片加载失败时回退到「厂商/作者全称」占位（与主站 48px 占位规则一致）。
+  // 外链图常被源站 403 / CORP 拦住，且不一定触发 error，所以再加一个超时兜底，避免卡片一直空白。
+  function bindImages(){
+    Array.prototype.forEach.call(view.querySelectorAll('img.tImg'),function(im){
+      var done=false;
+      var fallback=function(){
+        if(done) return; done=true;
+        im.style.display='none';
+        var p=im.parentNode.querySelector('.ph');
+        if(p && !p.querySelector('.phTxt')){
+          var s=document.createElement('span'); s.className='phTxt';
+          s.innerHTML=p.dataset.html||''; p.appendChild(s);
+        }
+      };
+      im.addEventListener('load',function(){ done=true; });
+      im.addEventListener('error',fallback);
+      setTimeout(function(){
+        if(!done && (!im.complete || im.naturalWidth===0)) fallback();
+      },2500);
+    });
+  }
+  function cardHtml(it,note){
+    var img=it.image?'<img class="tImg" src="'+esc(it.image)+'" alt="'+esc(it.title)+'" loading="lazy" decoding="async" />':'';
+    var ph='<div class="ph" data-html="'+esc(phHtml(it))+'">'+(it.image?'':'<span class="phTxt">'+phHtml(it)+'</span>')+'</div>';
+    var isLim=it.type==='limited';
+    var badge=isLim?'<span class="badge limited">限时免费</span>':'<span class="badge">免费</span>';
+    var dl='';
+    if(isLim){
+      if(isYmd(it.deadline)){
+        var n=leftDays(it.deadline);
+        dl='<div class="dl">截止 '+esc(it.deadline)+(calDays(it.deadline)===0?' · 今天最后一天':' · 还剩 '+n+' 天')+'</div>';
+      } else dl='<div class="dl unknown">截止时间未知，请尽快领取</div>';
+    }
+    var url=it.claimLink||it.purchaseUrl||it.link||'#';
+    var go=url!=='#'?'<a class="more" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">前往领取 ↗</a>'
+                    :'<span class="more">暂无领取链接</span>';
+    return '<article class="tCard">'+
+      '<div class="thumb">'+img+ph+badge+'</div>'+
+      '<div class="body">'+
+        '<h3>'+esc(it.title)+'</h3>'+
+        (it.brand?'<div class="brand">厂商/作者：<b>'+esc(it.brand)+'</b></div>':'')+
+        (note?'<p class="note">'+esc(note)+'</p>':'')+
+        (it.summary?'<p class="desc">'+esc(it.summary)+'</p>':'')+
+        dl+
+        '<div class="foot">'+go+'</div>'+
+      '</div></article>';
+  }
+
+  function renderList(){
+    document.title='精选专题 · 米糕的免费信息小站';
+    heroTitle.textContent='精选专题';
+    heroSub.textContent='从八千多条里挑出来的清单，每一份都写了「为什么是它」。';
+    view.innerHTML='<div class="state">正在加载专题…</div>';
+    return getPayload().then(function(p){
+      var html='<div class="introCard"><p>资源库按「用途、厂商、截止时间」检索，适合找某一个具体的东西；这里反过来——按一份实际能用的配置挑好，并写清楚为什么选它。专题只存条目 id，卡片每次都从当天的数据里取，条目下架或限免结束就会自动隐藏，不会挂着领不到的链接。</p></div>';
+      html+='<div class="topicGrid">';
+      p.topics.forEach(function(t){
+        var n=t.dynamic?'每日自动更新':t.items.length+' 件';
+        html+='<a class="topicCard" href="topics.html?t='+esc(t.slug)+'" style="--c:'+esc(t.accent||'#4f63ff')+'">'+
+          '<span class="kind">'+(t.kind==='dynamic'?'动态清单':'人工精选')+'</span>'+
+          '<h3>'+esc(t.title)+'</h3>'+
+          '<p>'+esc(t.tagline)+'</p>'+
+          '<div class="meta">'+esc(n)+(t.updatedAt?' · 整理于 '+esc(t.updatedAt):'')+'</div>'+
+          '<span class="go">查看清单 →</span></a>';
+      });
+      html+='</div>';
+      view.innerHTML=html;
+      ldTopicList(p.topics);
+    });
+  }
+
+  function renderTopic(slug){
+    view.innerHTML='<div class="state">正在核对条目…</div>';
+    return getPayload().then(function(p){
+      var t=null;
+      for(var i=0;i<p.topics.length;i++){ if(p.topics[i].slug===slug){ t=p.topics[i]; break; } }
+      if(!t) throw new Error('没有找到这个专题');
+      document.title=(t.title||'精选专题')+' · 精选专题';
+      heroTitle.textContent=t.title||'精选专题';
+      heroSub.textContent=t.tagline||'';
+
+      var pairs=[], hidden=0;
+      if(t.dynamic==='limited'){
+        var lim=p.limitedIds.map(function(id){ return p.items[id]; })
+          .filter(function(it){ return it && it.type==='limited'; });
+        var dated=lim.filter(function(it){ return isYmd(it.deadline); });
+        var undated=lim.filter(function(it){ return !isYmd(it.deadline); });
+        hidden=dated.filter(function(it){ return it.deadline<TODAY; }).length;
+        var sorted=dated.filter(function(it){ return it.deadline>=TODAY; })
+          .sort(function(a,b){ return a.deadline.localeCompare(b.deadline); }).concat(undated);
+        pairs=sorted.slice(0,t.limit||12).map(function(it){ return {it:it,note:''}; });
+      } else {
+        (t.items||[]).forEach(function(row){
+          var it=p.items[row.id];
+          if(!it){ hidden++; return; }
+          if(it.type==='limited'&&isYmd(it.deadline)&&it.deadline<TODAY){ hidden++; return; }
+          pairs.push({it:it,note:row.note||''});
+        });
+      }
+
+      var html='<a class="backLink" href="topics.html">← 全部专题</a>';
+      html+='<div class="introCard">'+ (t.intro||[]).map(function(x){ return '<p>'+esc(x)+'</p>'; }).join('') +'</div>';
+      if(pairs.length){
+        html+='<div class="itemGrid">'+pairs.map(function(x){ return cardHtml(x.it,x.note); }).join('')+'</div>';
+      } else {
+        html+='<div class="state">这份清单里的条目目前都已结束或下架，先看看别的专题吧。</div>';
+      }
+      if(hidden) html+='<p class="hiddenNote">另有 '+hidden+' 条已下架或已过领取时间，已自动隐藏。</p>';
+      view.innerHTML=html;
+      bindImages();
+      ldTopicDetail(t,pairs);
+    });
+  }
+
+  var slug=new URLSearchParams(location.search).get('t');
+  var task=slug?renderTopic(slug):renderList();
+  task.catch(function(e){
+    view.innerHTML='<div class="state">专题加载失败：'+esc(e.message)+'。可<a href="index.html">返回资源库</a>，或稍后刷新。</div>';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "buildId": "20261114100219",
+  "generatedAt": "2026-11-14T10:02:19.175Z",
+  "prevBuildId": "20261113103644",
+  "baseline": false,
+  "totals": {
+    "free": 8332,
+    "limited": 48
+  },
+  "delta": {
+    "free": -1,
+    "limited": 0
+  },
+  "newCount": 0,
+  "newItems": [],
+  "weeklyNew": 32,
+  "expiringCount": 2,
+  "expiringSoon": [
+    {
+      "id": "ours-900fc73fb850",
+      "title": "限免福利：UJAM 限时免费送出 Detunicorn 超级锯齿波合成器插件",
+      "brand": "MIDIFAN",
+      "deadline": "2026-11-18",
+      "daysLeft": 4
+    },
+    {
+      "id": "dailyidea-ccurve-free",
+      "title": "Daily Idea CCurve：MIDI 表情曲线插件 100 份许可免费领",
+      "brand": "Daily Idea Co.",
+      "deadline": "2026-11-19",
+      "daysLeft": 5
+    }
+  ],
+  "categoryMoves": [
+    {
+      "key": "fx",
+      "label": "效果器",
+      "delta": -1
+    }
+  ],
+  "note": "由 scripts/build-digest.mjs 在每次构建时对比上一版产物自动生成；首次构建或上一版缺失时为 baseline，不显示增量。"
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<title>关于 · 米糕的免费信息小站</title>
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="alternate" type="application/rss+xml" title="米糕的免费信息小站 · 免费资源更新" href="feed.xml" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"WebSite","@id":"https://michaeljeancn.github.io/#website","url":"https://michaeljeancn.github.io/","name":"米糕的免费信息小站","inLanguage":"zh-CN","description":"为有声书、广播剧与影视配音从业者整理的正版免费插件、音源与限免情报。","publisher":{"@id":"https://michaeljeancn.github.io/#studio"}},
+  {"@type":"Organization","@id":"https://michaeljeancn.github.io/#studio","name":"米糕声音坊","url":"https://michaeljeancn.github.io/","description":"米糕的个人工作室，做有声书 / 有声剧、广播剧以及影视配音的录音与制作，也包括教学。","email":"michaeljeancn@outlook.com","logo":{"@type":"ImageObject","url":"https://michaeljeancn.github.io/assets/logo-dark.png"},"contactPoint":{"@type":"ContactPoint","contactType":"general","email":"michaeljeancn@outlook.com","availableLanguage":"zh-CN"},"sameAs":["https://www.ximalaya.com/zhubo/45392328","https://www.kuwo.cn/singer_detail/8193913/album","https://www.lanrentingshu.com/anchor/1126508044","https://www.qidian.com/audiobook/31643285107875401/","https://music.163.com/#/user/home?id=3826362280","https://space.bilibili.com/81259795"]}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"AboutPage","@id":"https://michaeljeancn.github.io/about.html#page","url":"https://michaeljeancn.github.io/about.html","name":"关于 · 米糕的免费信息小站","description":"米糕声音坊介绍、数据来源与筛选标准、更新日志、访问与隐私、联系方式。","inLanguage":"zh-CN","isPartOf":{"@id":"https://michaeljeancn.github.io/#website"},"mainEntity":{"@id":"https://michaeljeancn.github.io/#studio"}},
+  {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"免费资源库","item":"https://michaeljeancn.github.io/"},{"@type":"ListItem","position":2,"name":"关于","item":"https://michaeljeancn.github.io/about.html"}]}
+]}
+</script>
+<style>
+  :root {
+    --bg:#f4f6fc; --bg-grad1:#eef2ff; --bg-grad2:#f8f5ff;
+    --card:#ffffff; --card-soft:#f7f8fe;
+    --text:#161a27; --text-2:#3c4560; --muted:#6f7891;
+    --border:#e4e8f4; --border-strong:#d3d9ec;
+    --accent:#4f63ff; --accent-2:#8b5cf6; --accent-soft:rgba(79,99,255,.10);
+    --shadow-sm:0 1px 2px rgba(23,32,70,.05);
+    color-scheme: light;
+  }
+  [data-theme="dark"] {
+    --bg:#0a0d17; --bg-grad1:#0e1426; --bg-grad2:#120e22;
+    --card:#141a2b; --card-soft:#1a2135;
+    --text:#e9ecf7; --text-2:#c2c9dd; --muted:#8e98b2;
+    --border:#232a40; --border-strong:#2f3855;
+    --accent:#8090ff; --accent-2:#b79cff; --accent-soft:rgba(128,144,255,.14);
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+    color-scheme: dark;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:radial-gradient(1200px 600px at 12% -10%, var(--bg-grad1), transparent 60%),
+               radial-gradient(1000px 500px at 88% 0%, var(--bg-grad2), transparent 55%),
+               var(--bg);
+    color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased;
+    min-height:100vh; transition:background .25s ease, color .25s ease;
+  }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+
+  /* ---------- Site nav (与资源库页保持一致) ---------- */
+  .siteNav { background:var(--card); border-bottom:1px solid var(--border); position:relative; z-index:60; }
+  .siteNavInner { display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:54px; flex-wrap:wrap; }
+  .siteNavBrand { display:flex; align-items:center; gap:9px; color:var(--text); text-decoration:none; font-size:14px; font-weight:600; min-width:0; }
+  .siteNavBrand img { width:26px; height:26px; object-fit:contain; display:block; }
+  .siteNavBrand .navLogoOnDark { display:none; }
+  [data-theme="dark"] .siteNavBrand .navLogoOnLight { display:none; }
+  [data-theme="dark"] .siteNavBrand .navLogoOnDark { display:block; }
+  .siteNavLinks { display:flex; align-items:center; gap:4px; flex-wrap:wrap; }
+  .siteNavLinks a { padding:6px 12px; border-radius:9px; font-size:13px; color:var(--text-2); text-decoration:none; transition:background .18s ease, color .18s ease; }
+  .siteNavLinks a:hover { background:var(--accent-soft); color:var(--accent); }
+  .siteNavLinks a.active { background:var(--accent-soft); color:var(--accent); }
+  .navTheme {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border-radius:999px; cursor:pointer;
+    border:1px solid var(--border-strong); background:var(--card-soft); color:var(--text-2); font-size:14px;
+  }
+  .navTheme:hover { color:var(--accent); border-color:var(--accent); }
+  @media (max-width:520px) {
+    .siteNavInner { min-height:auto; padding-top:10px; padding-bottom:10px; }
+    .siteNavBrand { font-size:13px; }
+    .siteNavLinks a { padding:5px 9px; font-size:12px; }
+  }
+
+  /* ---------- About page ---------- */
+  .aboutMain { max-width:860px; padding:30px 20px 60px; }
+  .aboutHero { display:flex; align-items:center; gap:16px; margin-bottom:24px; }
+  .aboutHero img { width:68px; height:68px; flex:0 0 68px; object-fit:contain; display:block; }
+  .aboutHero .heroLogoOnDark { display:none; }
+  [data-theme="dark"] .aboutHero .heroLogoOnLight { display:none; }
+  [data-theme="dark"] .aboutHero .heroLogoOnDark { display:block; }
+  .aboutHero h1 { margin:0 0 4px; font-size:24px; letter-spacing:.3px; }
+  .aboutHero p { margin:0; font-size:13px; color:var(--muted); }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px 22px; margin-bottom:16px; box-shadow:var(--shadow-sm); }
+  .card h2 { margin:0 0 12px; font-size:16px; font-weight:600; }
+  .card p, .card li { font-size:13.5px; color:var(--text-2); }
+  .card p { margin:0 0 10px; }
+  .card p:last-child { margin-bottom:0; }
+  .card ul { margin:0; padding-left:20px; }
+  .card li { margin-bottom:6px; }
+  .card a { color:var(--accent); }
+  .card ul.log { list-style:none; padding:0; margin:0; }
+  .card ul.log li { display:flex; gap:12px; margin-bottom:6px; font-size:13px; }
+  .card ul.log li:last-child { margin-bottom:0; }
+  .card ul.log time { flex:0 0 44px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .digest { margin-top:14px; padding-top:12px; border-top:1px solid var(--border); font-size:12.5px; }
+  .digest .dHead { color:var(--text-2); line-height:1.7; }
+  .digest .dHead b { color:var(--accent); font-weight:700; font-variant-numeric:tabular-nums; }
+  .digest ul.dList { list-style:none; margin:8px 0 0; padding:0; }
+  .digest ul.dList li { display:flex; gap:9px; font-size:12px; color:var(--muted); margin-bottom:4px; line-height:1.5; }
+  .digest .dDate { flex:0 0 78px; color:var(--price); font-weight:700; font-variant-numeric:tabular-nums; }
+  .digest .dNote { font-size:12px; color:var(--muted); }
+  .siteFoot { margin-top:26px; font-size:12px; color:var(--muted); }
+  .siteFoot a { color:var(--accent); }
+</style>
+<script>
+  (function(){
+    var t=null; try{ t=localStorage.getItem('fah-theme'); }catch(e){}
+    if(!t && window.matchMedia) t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-theme', t||'light');
+  })();
+</script>
+</head>
+<body>
+<nav class="siteNav" aria-label="主导航">
+  <div class="wrap siteNavInner">
+    <a class="siteNavBrand" href="index.html">
+      <img class="navLogoOnLight" src="assets/logo-dark.png" alt="" />
+      <img class="navLogoOnDark" src="assets/logo-light.png" alt="" aria-hidden="true" />
+      <span>米糕的免费信息小站</span>
+    </a>
+    <div class="siteNavLinks">
+      <a href="index.html">免费资源库</a>
+      <a href="topics.html">精选专题</a>
+      <a href="works.html">我的作品</a>
+      <a href="about.html" class="active">关于</a>
+      <a href="about.html#changelog">更新日志</a>
+      <button class="navTheme" id="navTheme" type="button" title="切换亮色 / 暗色" aria-label="切换亮色 / 暗色">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap aboutMain">
+  <header class="aboutHero">
+    <img class="heroLogoOnLight" src="assets/logo-dark.png" alt="米糕声音坊" />
+    <img class="heroLogoOnDark" src="assets/logo-light.png" alt="" aria-hidden="true" />
+    <div>
+      <h1>米糕的免费信息小站</h1>
+      <p>米糕声音坊 · 为学生和同业朋友整理正版免费的音频插件、音源与工具。</p>
+    </div>
+  </header>
+
+  <section class="card" id="about">
+    <h2>关于本站</h2>
+    <p><strong>米糕声音坊</strong>是米糕的个人工作室，主要做有声书 / 有声剧、广播剧以及影视配音的录音和制作，也包括教学。</p>
+    <p>这个小小的站点，是为了给自己的学生、同业朋友提供一个<strong>正版免费插件的信息聚合点</strong>。目前收录永久免费条目八千余条，每天自动重算一次，可按用途、厂商和截止时间检索；作品收听入口见<a href="works.html">「我的作品」</a>。</p>
+  </section>
+
+  <section class="card" id="sources">
+    <h2>数据来源与筛选标准</h2>
+    <ul>
+      <li>只聚合<strong>官方授权免费 / 限时免费</strong>的信息，不收录破解版、盗版或来路不明的分发站点。</li>
+      <li>数据来自公开的 RSS 资讯源与厂商官方商品接口；抓取正文只用于提取「直接领取链接」。</li>
+      <li><strong>本站不托管任何插件、音源或采样文件</strong>，领取一律跳转到厂商官方页面。</li>
+      <li>限免条目显示截止时间，过期后不再展示；无法确认截止时间的会提示尽快领取。</li>
+      <li>分类由规则自动生成，人工修正单独保存，不会被每日自动更新覆盖。</li>
+      <li>「工具」按用途收<strong>不参与声音处理的辅助软件</strong>（频谱防伪、编辑转换、测量仪表、MIDI 辅助、监听参考等），纯插件工具也留在工具；<strong>效果器只收真正处理声音的插件</strong>。像 RX 那样带独立应用的声音软件，允许同时属于工具类。</li>
+      <li>条目信息以厂商官方页面为准，领取前请自行核对授权条款与系统要求。</li>
+    </ul>
+  </section>
+
+  <section class="card" id="changelog">
+    <h2>更新日志</h2>
+    <p>数据每日 18:00 自动重算并发布，这里只记页面与规则的调整。</p>
+    <div class="digest" id="digest"><div class="dNote">简报加载中…</div></div>
+    <ul class="log">
+      <li><time datetime="2026-11-10">11-10</time><span>分类调整：「工具」按用途收不参与声音处理的辅助软件；纯工具不再被误归到效果器的处理子类。</span></li>
+      <li><time datetime="2026-11-09">11-09</time><span>专题改用构建期精简索引（首载 11.2 MB → 55 KB），新增 RSS 订阅与结构化数据。</span></li>
+      <li><time datetime="2026-11-09">11-09</time><span>新增「精选专题」，更新简报由每日构建自动生成。</span></li>
+      <li><time datetime="2026-11-09">11-09</time><span>新增「关于」「我的作品」页面，导航统一。</span></li>
+      <li><time datetime="2026-11-08">11-08</time><span>分类调整：国风独立成类，民谣并入世界 / 民族。</span></li>
+    </ul>
+  </section>
+
+  <section class="card" id="privacy">
+    <h2>访问与隐私</h2>
+    <p>本站通过分享链接访问，属于半公开页面，不面向搜索引擎收录。页面不提供注册、评论或收藏功能，也不会要求你提交个人信息。「我的作品」中的链接会跳转到第三方平台，其内容与隐私政策由各平台负责。</p>
+  </section>
+
+  <section class="card" id="subscribe">
+    <h2>订阅更新</h2>
+    <p>不想每天来翻页面，可以用 RSS 阅读器订阅 <a href="feed.xml">feed.xml</a>：当前限免（标题带截止日）优先，后面是最近上架的永久免费，每条都直接指向官方领取页，每日 18:00 自动重算。</p>
+    <p>阅读器不会自动带上访问口令，订阅时请用你手上的分享地址把路径换成 <code>feed.xml</code>，并保留末尾的 <code>?sharecode=…</code>；口令请不要公开转发。</p>
+  </section>
+
+  <section class="card" id="contact">
+    <h2>联系</h2>
+    <p>邮箱：<a href="mailto:michaeljeancn@outlook.com">michaeljeancn@outlook.com</a></p>
+    <p>QQ：7839881</p>
+  </section>
+
+  <footer class="siteFoot">米糕声音坊 · 米糕的免费信息小站 · 数据每日自动更新 · <a href="feed.xml">RSS 订阅</a> · <a href="works.html">我的作品</a> · <a href="index.html">返回资源库</a></footer>
+</main>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('navTheme');
+    if(btn) btn.addEventListener('click',function(){
+      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{ localStorage.setItem('fah-theme',next); }catch(e){}
+    });
+  })();
+
+  // 更新简报：只读 data-digest.json（每次构建自动生成），接口不可用时安静降级，不影响页面
+  (function(){
+    var box=document.getElementById('digest');
+    if(!box) return;
+    var esc=function(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    }); };
+    fetch('data-digest.json',{cache:'no-cache'}).then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json();
+    }).then(function(d){
+      var t=d.totals||{}, html=[];
+      html.push('<div class="dHead">本版：永久免费 <b>'+Number(t.free||0).toLocaleString()+'</b> 条 · 限免 <b>'+Number(t.limited||0)+'</b> 条'+
+        ' · 近 7 天上架 <b>'+Number(d.weeklyNew||0)+'</b> 条'+
+        (d.newCount!=null ? ' · 较上一版新增 <b>'+Number(d.newCount)+'</b> 条' : '')+'</div>');
+      if(d.expiringCount){
+        html.push('<div class="dHead">7 天内到期 <b>'+Number(d.expiringCount)+'</b> 条，记得先领：</div>');
+        html.push('<ul class="dList">');
+        (d.expiringSoon||[]).slice(0,3).forEach(function(x){
+          html.push('<li><span class="dDate">'+esc(x.deadline)+'</span><span>'+esc(x.title)+'</span></li>');
+        });
+        html.push('</ul>');
+      }
+      if(d.baseline) html.push('<div class="dNote">增量对比从下一次构建起生效。</div>');
+      box.innerHTML=html.join('');
+    }).catch(function(){
+      box.innerHTML='<div class="dNote">简报暂时不可用，站点数据仍每日自动更新。</div>';
+    });
+  })();
+</script>
+</body>
+</html>

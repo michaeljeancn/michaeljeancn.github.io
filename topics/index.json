@@ -1,0 +1,47 @@
+{
+  "updatedAt": "2026-11-09",
+  "topics": [
+    {
+      "slug": "starter-kit",
+      "title": "新手免费十件套",
+      "tagline": "装好就能开工：修音色、控动态、加空间、看响度、做编曲，每一步只留一个",
+      "kind": "curated",
+      "accent": "#4f63ff"
+    },
+    {
+      "slug": "vocal-post",
+      "title": "有声后期",
+      "tagline": "去爆破音、压齿音、稳旁白、让配乐自动让路——给有声书与广播剧的一条人声链",
+      "kind": "curated",
+      "accent": "#8b5cf6"
+    },
+    {
+      "slug": "mixing-mastering",
+      "title": "混音母带",
+      "tagline": "看频谱、修频率、控动态、收峰值、核响度，把混音收成能交付的成品",
+      "kind": "curated",
+      "accent": "#0891b2"
+    },
+    {
+      "slug": "guofeng",
+      "title": "国风音源",
+      "tagline": "古筝、琵琶、二胡、竹笛、扬琴、箫、锣——中国民族乐器单独成类",
+      "kind": "curated",
+      "accent": "#f59e0b"
+    },
+    {
+      "slug": "cinematic",
+      "title": "影视配乐入门",
+      "tagline": "从 BRAAAM 到铺底与纹理：给有声剧、广播剧做声音背景的八块积木",
+      "kind": "curated",
+      "accent": "#e11d48"
+    },
+    {
+      "slug": "limited-now",
+      "title": "正在限免",
+      "tagline": "按截止时间排队的限时免费，过期的会在每日构建里自动移走",
+      "kind": "dynamic",
+      "accent": "#0f9d63"
+    }
+  ]
+}
