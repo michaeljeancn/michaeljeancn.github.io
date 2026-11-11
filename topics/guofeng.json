@@ -1,0 +1,21 @@
+{
+  "slug": "guofeng",
+  "title": "国风音源",
+  "tagline": "古筝、琵琶、二胡、竹笛、扬琴、箫、锣——中国民族乐器单独成类",
+  "updatedAt": "2026-11-09",
+  "intro": [
+    "这个站把中国民族乐器单独划成「国风」，不塞进「世界/民族」，也不放进民谣。原因是编写习惯差别很大：民乐的滑音、揉弦、吹管气息和打击乐句式，用一套通用的民族音色往往做不出来，找的时候也总被淹没在几百条世界音乐里。",
+    "下面八件覆盖弹拨、弓弦、吹管、击弦和打击：古筝、琵琶、二胡、竹笛、扬琴、箫、锣和中式门铃。多数来自 Pianobook 社区采样，音源体积不大、个性很强，适合做点缀和短句，不追求「全套交响民乐团」的整齐度。",
+    "装之前先看两件事：社区音色多数要用免费的 Decent Sampler，少数需要付费的 Kontakt 完整版（琵琶那条就是）；站里另有 Kong Audio 的 Mini Erhu / Mini DiZi，只有 Windows 32 位版，系统不支持就别折腾了。这里优先选了能直接用的。"
+  ],
+  "items": [
+    { "id": "kong-guzheng", "note": "古筝：Kong Audio 的 GuZheng Classic 免费精简版，弹拨旋律入门最稳的一件。" },
+    { "id": "pianobook-pipa", "note": "琵琶：民族弹拨旋律，音色包免费，但需要付费的 Kontakt 完整版才能加载。" },
+    { "id": "pianobook-erhu", "note": "二胡：弓弦旋律与国风配乐，揉弦感比通用弦乐更对味。" },
+    { "id": "pianobook-mdm-dizi-v1-1", "note": "竹笛：MDM Dizi v1.1，民乐吹管旋律，适合明亮的句子。" },
+    { "id": "translation-east-asia", "note": "扬琴：Native Instruments 免费 Yangqin，明亮的击弦，做伴奏织体很好用。" },
+    { "id": "strezov-64", "note": "箫：JADE Ethnic Orchestra 系列的免费精简版，柔和的中国吹管色彩；完整母库另购。" },
+    { "id": "p4f-2237", "note": "中国锣：Chau Gongs 带力度分层，做转折和重音比合成锣有生气。" },
+    { "id": "pianobook-chinese-door-bells", "note": "中式门铃：清脆的铃声采样，做点缀和场景切换的小记号。" }
+  ]
+}
